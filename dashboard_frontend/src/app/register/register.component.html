@@ -1,0 +1,84 @@
+<!-- <p>
+register works!
+</p> -->
+
+<form class="example-form" [formGroup]="registerForm" (ngSubmit)="registerForm.valid && onSubmit(registerForm.value)"
+novalidate>
+<div class='row'>
+  <div class='col-md-12'>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Enter your name" formControlName="username" required>
+      <mat-error *ngIf="registerForm.controls.username.touched && registerForm.controls.username.hasError('minlength')">
+        Please enter name
+      </mat-error>
+    </mat-form-field>
+  </div>
+</div>
+<div class='row'>
+  <div class='col-md-12'>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Enter your email address" formControlName="userEmail" required>
+      <mat-error *ngIf="registerForm.controls.userEmail.touched && registerForm.controls.userEmail.hasError('required')">
+        Please enter email
+      </mat-error>
+      <mat-error *ngIf="registerForm.controls.userEmail.touched && registerForm.controls.userEmail.hasError('pattern')">
+        Please enter valid email
+      </mat-error>
+    </mat-form-field>
+  </div>
+</div>
+<div class='row'>
+  <div class='col-md-12'>
+    <mat-form-field>
+      <mat-select placeholder="Select your vendor" formControlName="vendorname">
+        <mat-option *ngFor="let option of vendor" [value]="option.name" required>{{option.name}}</mat-option>
+      </mat-select>
+      <mat-error *ngIf="registerForm.controls.vendorname.touched && registerForm.controls.vendorname.hasError('required')">
+        Please select a vendor
+      </mat-error>
+    </mat-form-field>
+  </div>
+</div>
+<div class='row'>
+  <div class='col-md-12'>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Enter your score" type="number" formControlName="vendorScore" required>
+      <mat-error *ngIf="registerForm.controls.vendorScore.touched && registerForm.controls.vendorScore.hasError('required')">
+        Please enter score
+      </mat-error>
+      <mat-error *ngIf="registerForm.controls.vendorScore.touched && registerForm.controls.vendorScore.hasError('pattern')">
+        Please enter valid score
+      </mat-error>
+    </mat-form-field>
+  </div>
+</div>
+<div class='row'>
+  <div class='col-md-6'>
+      <mat-form-field>
+          <mat-select placeholder="Select Month" formControlName="month">
+            <mat-option *ngFor="let option of month" [value]="option.id" required>{{option.name}}</mat-option>
+          </mat-select>
+          <mat-error *ngIf="registerForm.controls.month.touched && registerForm.controls.month.hasError('required')">
+            Please select a month
+          </mat-error>
+        </mat-form-field>
+  </div>
+  <div class='col-md-6'>
+      <mat-form-field>
+          <mat-select placeholder="Select Year" formControlName="year">
+            <mat-option *ngFor="let option of year" [value]="option.name" required>{{option.name}}</mat-option>
+          </mat-select>
+          <mat-error *ngIf="registerForm.controls.year.touched && registerForm.controls.year.hasError('required')">
+            Please select Year
+          </mat-error>
+        </mat-form-field>
+  </div>
+</div>
+<div class='row'>
+  <div class='col-md-12'>
+    <div>
+      <button mat-button class="btn-success" (click)=beforeSubmit()>Submit</button>
+    </div>
+  </div>
+</div>
+</form>

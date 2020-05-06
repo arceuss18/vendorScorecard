@@ -1,0 +1,44 @@
+<div *ngIf="updateDetails" class='container-fluid'>
+  <div class='row'>
+    <form autocomplete="off">
+    <div class='col-md-12'>
+      <mat-form-field>
+        <input matInput [disabled]="isDisabled" placeholder="Enter username" [(ngModel)]="updateDetails.username" [ngModelOptions]="{standalone: true}">
+      </mat-form-field>
+    </div>
+    <div class='col-md-12'>
+    <mat-form-field>
+      <mat-select [disabled]="isDisabled" placeholder="Enter your vendor" [(ngModel)]='updateDetails.vendorname' [ngModelOptions]="{standalone: true}">
+        <mat-option *ngFor="let option of vendorList" [value]="updateDetails.vendorname" required>{{option.name}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    </div>
+    <div class='col-md-12'>
+        <mat-form-field>
+          <input matInput placeholder="Enter your score" [(ngModel)]="updateDetails.vendorScore" [ngModelOptions]="{standalone: true}">
+        </mat-form-field>
+      </div> 
+      <div class='row'>
+        <div class='col-md-6'>
+            <mat-form-field>
+                <mat-select [disabled]="isDisabled" placeholder="Select Month" [(ngModel)]='updateDetails.showMonth' [ngModelOptions]="{standalone: true}">
+                  <mat-option *ngFor="let option of month" [value]="option.id" required>{{option.name}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+        </div>
+        <div class='col-md-6'>
+            <mat-form-field>
+                <mat-select [disabled]="isDisabled" placeholder="Select Year" [(ngModel)]='updateDetails.showYear' [ngModelOptions]="{standalone: true}">
+                  <mat-option *ngFor="let option of year" [value]="option.name" required>{{option.name}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+        </div>
+      </div>  
+    <div class='col-md-12'>
+    <div>
+      <button mat-button class="btn-success" (click)="updateVendorDetails()">Update</button>
+    </div>
+    </div>
+  </form>
+  </div>
+</div>

@@ -1,0 +1,63 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "~bootstrap/dist/css/bootstrap.css";
+
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+    display: inline-block;
+    padding-left: 100px;
+    padding-block-start: 20px;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+
+  /* @import "~@angular/material/prebuilt-themes/indigo-pink.css"; */
+
+
+nav a {
+    padding: 15px 15px 15px 15px;
+    text-decoration: none;
+    margin-top: 20px;
+    display: inline-block;
+    background-color: #eee;
+    border-radius: 4px;
+  }
+  nav a:visited, a:link {
+    color: #607D8B;
+  }
+  nav a:hover {
+    color: #039be5;
+    background-color: #CFD8DC;
+  }
+  nav a.active {
+    color: #039be5;
+  }
+  .container-fluid{
+    align-content: center;
+  display: inline-block
+  }
+  .page{
+    border-style: solid;
+    border-width: 5px;
+    color: #039be5;
+    background-color: aliceblue;
+    padding-left: 100px;
+    display: inline-block;
+  }
+  .heading{
+    padding: 15px 15px 15px 15px;
+    text-align: left;
+    text-decoration: green;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-feature-settings: "afrc";
+    border-bottom-color: aqua;
+  }
+  .btn-success{
+	background:#0582b3;
+	border-color:#0582b3;
+	}
